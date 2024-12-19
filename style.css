@@ -1,0 +1,186 @@
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Prevent elements from exceeding their container */
+}
+
+body {
+  background-color: #0B0D0E;
+  color: #E2E3E4;
+  font-family: 'Fira Code', monospace;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  margin: 0;
+}
+body::after {
+    content: '';
+    display: block;
+    height: 50vh; /* Adds extra scrollable space equal to the viewport height */
+  }
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1em 5%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+  padding: 0;
+}
+
+nav a {
+  color: #E2E3E4;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #7A7A7A;
+}
+
+/* Main section styling */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+#boidsCanvas{
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  left:0;
+  right:0;
+  z-index: -1;
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2em 5%; /* Adjusted padding for consistent spacing */
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box; /* Ensures padding stays within the container */
+}
+
+#intro h1 {
+  font-size: 4rem;
+  margin-bottom: 1em;
+}
+
+#intro p {
+  font-size: 1.5rem;
+  color: #A9A9A9;
+}
+
+.scroll-down {
+  margin-top: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5; /* Reduced opacity for transparency */
+}
+
+.scroll-down p {
+  margin: 0;
+  font-size: 0.9rem; /* Smaller text size */
+  color: #A9A9A9;
+}
+
+.scroll-down .arrow {
+  margin-top: 0.5em;
+  margin-left:1.5em;
+  width: 15px; /* Smaller arrow */
+  height: 15px;
+  border-left: 2px solid #E2E3E4;
+  border-bottom: 2px solid #E2E3E4;
+  transform: rotate(-45deg);
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(-45deg);
+  }
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4em 5%; /* Increase padding for more spacing */
+    width: 100%;
+    opacity: 0; /* Start completely hidden */
+    transform: translateY(20%); /* Start slightly off-screen */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth updates */
+}
+
+#projects.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em; /* Increased spacing */
+  justify-content: flex-start;
+  margin-top: 1.5em;
+  width: 100%; /* Ensure the grid stays within the container */
+}
+
+.project-item {
+  background-color: #1E262E;
+  color: #E2E3E4;
+  padding: 1.5em;
+  width: calc(25% - 2.5em); /* Flexible width ensures responsiveness */
+  text-align: left;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.project-item h3 {
+  margin-top: 0;
+}
+
+.project-item p {
+  margin: 0.5em 0 0;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  #intro {
+    padding: 1.5em 3%; /* Adjust padding on smaller screens */
+  }
+
+  .project-grid {
+    gap: 1.5em; /* Adjust the gap between items */
+  }
+
+  .project-item {
+    width: 100%; /* Make each project item take up full width on mobile */
+    margin-bottom: 1.5em; /* Add space between project items */
+  }
+
+  .scroll-down p {
+    font-size: 0.8rem; /* Adjust font size */
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}

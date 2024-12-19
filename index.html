@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connor Stevens</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+<!--Boids background------------------------------------------->
+  <script type="module" src="./Boid.js" ></script>
+  <script type="module" src="./Obstacle.js" ></script>
+  <script type="module" src="./boidsMain.js"></script>
+  <canvas id="boidsCanvas"></canvas>
+<!------------------------------------------------------------->
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h1 id="name">Connor Stevens</h1>
+      <p id="bio">Welcome to my portfolio. I'm a creative programmer studying Computer Science & Philosophy at Oxford.</p>
+      <div class="scroll-down">
+        <div class="arrow"></div>
+      </div>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-item">
+          <h3>Verlet Physics</h3>
+          <p>Physics with Verlet integration in JavaScript.</p>
+        </div>
+        <div class="project-item">
+          <h3>Boids</h3>
+          <p>Flocking simulation running in the background right now.</p>
+        </div>
+        <div class="project-item">
+          <h3>Raytracer</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="project-item">
+          <h3>Cellular Physics Sandbox</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
