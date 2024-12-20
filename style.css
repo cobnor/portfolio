@@ -154,6 +154,7 @@ main {
   background-color: #1E262E;
   color: #E2E3E4;
   padding: 1.5em;
+  min-height: 10.5em;
   width: calc(25% - 2.5em); /* Flexible width ensures responsiveness */
   text-align: left;
   border-radius: 5px;
