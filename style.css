@@ -58,6 +58,7 @@ main {
   left:0;
   right:0;
   z-index: -1;
+
 }
 
 #intro {
@@ -143,6 +144,7 @@ main {
 }
 
 .project-item {
+  text-decoration: none;
   background-color: #1E262E;
   color: #E2E3E4;
   padding: 1.5em;
@@ -150,6 +152,12 @@ main {
   text-align: left;
   border-radius: 5px;
   box-sizing: border-box;
+  transition: background-color .3s;
+
+}
+
+.project-item:hover{
+  background-color: rgba(64, 148, 201, 0.75);
 }
 
 .project-item h3 {
