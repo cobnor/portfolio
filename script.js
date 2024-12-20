@@ -4,6 +4,7 @@ window.addEventListener("load", () => {
   });
   
   document.addEventListener("scroll", () => {
+
     const projectsSection = document.getElementById("projects");
     const projectItems = document.querySelectorAll(".project-item");
     const rect = projectsSection.getBoundingClientRect();
@@ -38,19 +39,13 @@ window.addEventListener("load", () => {
     projectItems.forEach((item, index) => {
       // Adjust the parallax speed per item (higher index = slower movement)
       const speed = 0.1 + index * 0.05;
-      item.style.transform = `translateY(${scrollY * speed}px)`;
-      item.style.opacity = 1-opacity*1.5
+      if(window.innerWidth >= 800){
+        item.style.transform = `translateY(${scrollY * speed}px)`;
+        item.style.opacity = 1-opacity*1.5
+      }
+
     });
   
-    // Handle scroll indicator fade out
-    //const scrollIndicator = document.querySelector(".scroll-down");
-    //const maxScroll = window.innerHeight; // The height of the viewport
-    //const currentScroll = window.scrollY;
-  
-    // Calculate the opacity based on how much the user has scrolled
-    //const opacity = Math.max(0, 1 - currentScroll*1.5 / maxScroll);
-  
-    // Apply the calculated opacity to the scroll indicator
     if (scrollIndicator) {
       scrollIndicator.style.opacity = opacity;
     }
