@@ -74,13 +74,21 @@ main {
 }
 
 #intro h1 {
-  font-size: 4rem;
-  margin-bottom: 1em;
+  font-size: 4.5rem;
+  font-weight:600;
+  margin-bottom: .75em;
+  background: linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
+  background-clip: text;
+  color:transparent;
+  filter: drop-shadow(4px 4px 10px #000000);
+  /* rgb(226, 227, 228) <- WHITE */
 }
 
 #intro p {
   font-size: 1.5rem;
   color: #A9A9A9;
+  filter: drop-shadow(2px 2px 8px #000000);
+
 }
 
 .scroll-down {
@@ -125,8 +133,6 @@ main {
     padding: 4em 5%; /* Increase padding for more spacing */
     width: 100%;
     opacity: 0; /* Start completely hidden */
-    transform: translateY(20%); /* Start slightly off-screen */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth updates */
 }
 
 #projects.visible {
@@ -152,7 +158,9 @@ main {
   text-align: left;
   border-radius: 5px;
   box-sizing: border-box;
-  transition: background-color .3s, scale .1s;
+  transition: scale .1s;
+  filter: drop-shadow(2px 2px 9px #000000);
+
 
 }
 
