@@ -22,13 +22,13 @@ window.addEventListener("load", () => {
     const gradientShift = currentScroll / 2; // Adjust speed of the gradient shift
 
     // Shift gradient based on scroll
-    const h1 = document.querySelector('#intro h1');
-    h1.style.background = `linear-gradient(${90 + gradientShift}deg, 
+    const name = document.querySelector('#intro h1 a');
+    name.style.background = `linear-gradient(${90 + gradientShift}deg, 
       hsla(195, 86%, 50%, 1) 0%, 
       hsla(236, 93%, 65%, 1) 100%)`;
-    h1.style.backgroundClip = 'text';
-    h1.style.webkitBackgroundClip = 'text';
-    h1.style.color = 'transparent';  
+    name.style.backgroundClip = 'text';
+    name.style.webkitBackgroundClip = 'text';
+    name.style.color = 'transparent';  
 
 
     // Calculate the opacity based on how much the user has scrolled
