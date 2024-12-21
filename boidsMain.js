@@ -14,7 +14,6 @@ const obstacles = [];
 //const population = Math.min(width,height)/7;
 const population = Math.min(width,height)/8;
 
-
 var addBoids = true;
 var addObstacles = false;
 var bodyEnabled = true;
@@ -43,6 +42,8 @@ function update(){
     canvas.height = window.innerHeight;
     width = canvas.width;
     height = canvas.height;
+
+
 
     let index = 0;
     for (let e of avoidingElements){
@@ -76,7 +77,8 @@ function drawObstacle(o){
     ctx.lineWidth = 1;
 }
 function drawBoid(b){
-    const size = 5;
+    let size = Math.min(5,Math.max((width + height)*0.0025,3));
+    console.log(size);
     var angle = Math.atan(b.velY/b.velX)+Math.PI;
     if(b.velX<0){
         angle = Math.PI + angle;
@@ -118,11 +120,7 @@ function drawBoid(b){
         ctx.fillStyle = "rgb(255 255 255)";
         ctx.fillRect(b.x-2,b.y-2,4,4);
     }
-    
-    
-
 }
-
 window.onscroll = function(e) {
     for(let b of boids){
         if (Math.random()>0.7){
