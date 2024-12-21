@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
   window.scrollTo(0, 0);
   });
   
-  document.addEventListener("scroll", () => {
+document.addEventListener("scroll", () => {
 
     const projectsSection = document.getElementById("projects");
     const projectItems = document.querySelectorAll(".project-item");
@@ -50,3 +50,44 @@ window.addEventListener("load", () => {
       scrollIndicator.style.opacity = opacity;
     }
 });
+
+
+const letters = document.querySelector("#name a");
+var hovered = new Set();
+
+function triggerNameAnimation(){
+  var index = 0;
+  for (const child of letters.children) {
+    setTimeout(() => {
+        void child.offsetWidth;
+
+      child.style.animation = "letterjump 1s forwards";
+      child.style.animationDelay = `${0.075 * index}s`;
+      index++;
+
+      setTimeout(() => {
+        child.style.animation = "none";
+        child.style.transition = "transform 0.1s";
+      }, 2175); // Match animation duration
+    },300)
+    
+  }
+
+}
+
+for (const child of letters.children) {
+  child.style.animation = "none";
+  void child.offsetWidth;
+
+  child.addEventListener("mouseenter", () => {
+    if(!hovered.has(child.id)){
+      hovered.add(child.id);
+
+      if(hovered.size >= 14){
+        hovered.clear();
+        triggerNameAnimation();
+      }
+    }
+  });
+}
+

@@ -93,31 +93,25 @@ main {
   margin: 0;
   padding: 0;
   transition: transform .1s;
-  /*
   animation-name: letterjump;
-  animation-duration: .5s;
-  animation-timing-function: cubic-bezier(.27,.96,.75,1.39);
+  animation-duration: 1s;
+  /* animation-timing-function: cubic-bezier(.27,.96,.75,1.39); */
   animation-delay:calc(0.2s + 0.075s* var(--i));
-  */
 }
 #name span:hover {
   transform:translateY(-0.075em);
 }
 
 /* intro animation */
-/*
 @keyframes letterjump{
-  0% {
-    transform: translateY(0);
+  25% {
+    transform: translateY(-.2em);
+    opacity: 0.5;
   }
-  50% {
-    transform: translateY(-0.1em);
-  }
-  100% {
-    transform: translateY(0);
+  60% {
+    transform: translateY(.1em);
   }
 }
-*/
 
 #intro p {
   font-size: 1.5rem;
