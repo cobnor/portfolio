@@ -73,7 +73,7 @@ main {
   box-sizing: border-box; /* Ensures padding stays within the container */
 }
 
-#intro h1 {
+#intro h1 a{
   font-size: 4.5rem;
   font-weight:600;
   margin-bottom: .75em;
@@ -81,8 +81,43 @@ main {
   background-clip: text;
   color:transparent;
   filter: drop-shadow(4px 4px 10px #000000);
+  display:flex; /* allow for individual letter interaction */
+  user-select: none;
+  text-decoration: none;
   /* rgb(226, 227, 228) <- WHITE */
 }
+
+
+#name span {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  transition: transform .1s;
+  /*
+  animation-name: letterjump;
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier(.27,.96,.75,1.39);
+  animation-delay:calc(0.2s + 0.075s* var(--i));
+  */
+}
+#name span:hover {
+  transform:translateY(-0.075em);
+}
+
+/* intro animation */
+/*
+@keyframes letterjump{
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.1em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+*/
 
 #intro p {
   font-size: 1.5rem;
@@ -200,4 +235,15 @@ main {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+
+@media (max-width: 700px) {
+  #intro h1 a{
+    font-size: 2rem; /* Reduce font size */
+    line-height: 1.5; /* Increase spacing between lines */
+  }
+  #intro p{
+    font-size: 1em; /* Reduce font size */
+  }
 }
