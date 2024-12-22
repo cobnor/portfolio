@@ -18,7 +18,9 @@ body::after {
   display: block;
   height: 50vh; /* Add extra scrollable space equal to viewport height */
 }
-
+a{
+  text-decoration: none;/* Remove underline for links */
+}
 /* Header styles */
 header {
   width: 100%;
