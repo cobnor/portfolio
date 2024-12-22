@@ -12,12 +12,14 @@ body {
   overflow-x: hidden; /* Prevent horizontal overflow */
   margin: 0;
 }
-body::after {
-    content: '';
-    display: block;
-    height: 50vh; /* Adds extra scrollable space equal to the viewport height */
-  }
 
+body::after {
+  content: '';
+  display: block;
+  height: 50vh; /* Add extra scrollable space equal to viewport height */
+}
+
+/* Header styles */
 header {
   width: 100%;
   display: flex;
@@ -26,11 +28,11 @@ header {
   padding: 1em 5%;
 }
 
+/* Navigation styles */
 nav ul {
   list-style: none;
   display: flex;
   gap: 1.5em;
-  padding: 0;
 }
 
 nav a {
@@ -51,59 +53,57 @@ main {
   justify-content: flex-start;
   width: 100%;
 }
-#boidsCanvas{
-  width:100vw;
-  height:100vh;
-  position:fixed;
-  left:0;
-  right:0;
-  z-index: -1;
 
+/* Canvas background for animation */
+#boidsCanvas {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 
+/* Intro section styling */
 #intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  text-align: left;
-  padding: 2em 5%; /* Adjusted padding for consistent spacing */
+  padding: 2em 5%;
   width: 100%;
   height: 100vh;
-  box-sizing: border-box; /* Ensures padding stays within the container */
+  box-sizing: border-box;
 }
 
-#intro h1 a{
+/* Title styling with gradient and effects */
+#intro h1 a {
   font-size: 4.5rem;
-  font-weight:600;
+  font-weight: 600;
   margin-bottom: .75em;
   background: linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
   background-clip: text;
-  color:transparent;
+  color: transparent;
   filter: drop-shadow(4px 4px 10px #000000);
-  display:flex; /* allow for individual letter interaction */
+  display: flex;
   user-select: none;
   text-decoration: none;
-  /* rgb(226, 227, 228) <- WHITE */
 }
 
-
+/* Letter jump animation */
 #name span {
   display: inline-block;
-  margin: 0;
-  padding: 0;
   transition: transform .1s;
   animation-name: letterjump;
   animation-duration: 1s;
-  /* animation-timing-function: cubic-bezier(.27,.96,.75,1.39); */
-  animation-delay:calc(0.2s + 0.075s* var(--i));
-}
-#name span:hover {
-  transform:translateY(-0.075em);
+  animation-delay: calc(0.2s + 0.075s * var(--i));
 }
 
-/* intro animation */
-@keyframes letterjump{
+#name span:hover {
+  transform: translateY(-0.075em);
+}
+
+@keyframes letterjump {
   25% {
     transform: translateY(-.2em);
     opacity: 0.5;
@@ -113,32 +113,33 @@ main {
   }
 }
 
+/* Intro paragraph styling */
 #intro p {
   font-size: 1.5rem;
   color: #A9A9A9;
   filter: drop-shadow(2px 2px 8px #000000);
-
 }
 
+/* Scroll-down section styling */
 .scroll-down {
   margin-top: 2em;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.5; /* Reduced opacity for transparency */
+  opacity: 0.5;
 }
 
 .scroll-down p {
   margin: 0;
-  font-size: 0.9rem; /* Smaller text size */
+  font-size: 0.9rem;
   color: #A9A9A9;
 }
 
+/* Arrow bounce animation */
 .scroll-down .arrow {
   margin-top: 0.5em;
-  margin-left:1.5em;
-  width: 15px; /* Smaller arrow */
+  width: 15px;
   height: 15px;
   border-left: 2px solid #E2E3E4;
   border-bottom: 2px solid #E2E3E4;
@@ -155,13 +156,14 @@ main {
   }
 }
 
+/* Projects section styling */
 #projects {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 4em 5%; /* Increase padding for more spacing */
-    width: 100%;
-    opacity: 0; /* Start completely hidden */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4em 5%;
+  width: 100%;
+  opacity: 0; /* Initially hidden */
 }
 
 #projects.visible {
@@ -169,33 +171,32 @@ main {
   transform: translateY(0);
 }
 
+/* Project grid layout */
 .project-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5em; /* Increased spacing */
+  gap: 2.5em;
   justify-content: flex-start;
   margin-top: 1.5em;
-  width: 100%; /* Ensure the grid stays within the container */
+  width: 100%;
 }
 
+/* Project item styling */
 .project-item {
-  text-decoration: none;
   background-color: #1E262E;
   color: #E2E3E4;
   padding: 1.5em;
   min-height: 10.5em;
-  width: calc(25% - 2.5em); /* Flexible width ensures responsiveness */
+  width: calc(25% - 2.5em);
   text-align: left;
   border-radius: 5px;
   box-sizing: border-box;
   transition: scale .1s;
   filter: drop-shadow(2px 2px 9px #000000);
-
-
 }
 
-.project-item:hover{
-  scale:1.05;
+.project-item:hover {
+  scale: 1.05;
 }
 
 .project-item h3 {
@@ -209,20 +210,20 @@ main {
 /* Responsive adjustments for mobile devices */
 @media (max-width: 768px) {
   #intro {
-    padding: 1.5em 3%; /* Adjust padding on smaller screens */
+    padding: 1.5em 3%;
   }
 
   .project-grid {
-    gap: 1.5em; /* Adjust the gap between items */
+    gap: 1.5em;
   }
 
   .project-item {
-    width: 100%; /* Make each project item take up full width on mobile */
-    margin-bottom: 1.5em; /* Add space between project items */
+    width: 100%;
+    margin-bottom: 1.5em;
   }
 
   .scroll-down p {
-    font-size: 0.8rem; /* Adjust font size */
+    font-size: 0.8rem;
   }
 }
 
@@ -231,13 +232,24 @@ html {
   scroll-behavior: smooth;
 }
 
-
+/* Adjustments for smaller screens */
 @media (max-width: 700px) {
-  #intro h1 a{
-    font-size: 2rem; /* Reduce font size */
-    line-height: 1.5; /* Increase spacing between lines */
+  #intro h1 a {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
   }
-  #intro p{
-    font-size: 1em; /* Reduce font size */
+
+  #intro p {
+    font-size: 1em;
+  }
+
+  #intro {
+    justify-content: flex-start;
+    padding-top: 30vh;
+  }
+
+  #intro p {
+    margin-top: 0.5em;
   }
 }
